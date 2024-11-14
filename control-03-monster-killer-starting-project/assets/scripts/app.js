@@ -24,7 +24,16 @@ function getMaxLifeValues(){
     return parsedValue;
 }
 
-let chosenMaxLife = getMaxLifeValues();
+let chosenMaxLife;
+try {
+    chosenMaxLife = getMaxLifeValues();
+} catch (error) {
+    console.log(error);
+    chosenMaxLife = 100;
+    alert('무언가를 잘못입력했습니다. 기본값인 100이 사용됩니다.');
+} finally {
+    
+}
 
 let currentMonsterHealth = chosenMaxLife;
 let currentPlayerHealth = chosenMaxLife;
